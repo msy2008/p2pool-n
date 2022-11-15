@@ -1,4 +1,5 @@
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
+* Infinitecoin [IFC]
 * Vertcoin [VTC]
 * GPUCoin [GPUC]
 * Execoin [EXE]
@@ -96,6 +97,10 @@ http://stackoverflow.com/q/6034390/1260906
 
 Running P2Pool:
 -------------------------
+Infinitecoin: 
+* Run P2Pool with the "--net infinitecoin" option.
+* Run your miner program, connecting to 127.0.0.1 on port 9391
+
 Vertcoin: 
 * Run P2Pool with the "--net vertcoin", "--net vertcoin2" (if you want to connect to 2nd network) or "--net vertcoin3" (for 3rd network) option.
 * Run your miner program, connecting to 127.0.0.1 on port 9171, 9172 (for 2nd network) or 9174 (for 3rd network).
