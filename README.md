@@ -3,6 +3,7 @@ Tutorials for jtoomim:
 
 P2pool installation with pypy -- Linux and Windows
 Copy and paste the following commands into a bash shell in order to install p2pool on Windows or Linux.
+Note: I personally only use it successfully on ubuntu18和ubuntu16, please explore other systems or versions by yourself.
 
 sudo apt-get update
 
