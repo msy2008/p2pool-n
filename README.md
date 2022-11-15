@@ -52,6 +52,18 @@ Example of Merged Mining：
 pypy run_p2pool.py infinitecoin infinitecoin123 --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoin:dogmcoin123@localhost:22172
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
 * Infinitecoin [IFC]
 * Vertcoin [VTC]
