@@ -36,12 +36,15 @@ sudo rm -r Twisted-15.4.0*
 You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or altcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
 git clone https://github.com/msy2008/p2pool-n.git
+
 cd p2pool-n
 
 Example:
+
 pypy run_p2pool.py infinitecoin infinitecoin123 --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
 
 Example of Merged Mining：
+
 pypy run_p2pool.py infinitecoin infinitecoin123 --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoin:dogmcoin123@localhost:22172
 
 
