@@ -1,4 +1,4 @@
-Tutorials for jtoomimnet:
+Tutorials for jtoomim:
 =========================
 
 P2pool installation with pypy -- Linux and Windows
