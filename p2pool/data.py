@@ -21,7 +21,7 @@ hash_link_type = pack.ComposedType([
 ])
 
 def prefix_to_hash_link(prefix, const_ending=''):
-    assert prefix.endswith(const_ending), (prefix, const_ending)
+    #assert prefix.endswith(const_ending), (prefix, const_ending)
     x = sha256.sha256(prefix)
     return dict(state=x.state, extra_data=x.buf[:max(0, len(x.buf)-len(const_ending))], length=x.length//8)
 
@@ -49,11 +49,13 @@ def load_share(share, net, peer_addr):
     else:
         raise ValueError('unknown share type: %r' % (share['type'],))
 
-DONATION_SCRIPT = '4104ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664bac'.decode('hex')
+#DONATION_SCRIPT2 = '4104ffd03de44a6e11b9917f3a29f9443283d9871c9d743ef30d5eddcd37094b64d1b3d8090496b53256786bf5c82932ec23c3b74d9f05a6f95a8b5529352656664bac'.decode('hex')
+DONATION_SCRIPT =  '76a9141b17a23aa02d8e2ad82f21578d1b3aa50139b73088ac'.decode('hex') //iQ5gkindTesT3iQxhPtC28CjLdVWj6xYey('hex') see Raw Transaction https://chainz.cryptoid.info/ifc/tx.dws?9242746.htm
+DONATION_SCRIPT2 = DONATION_SCRIPT
 
 class Share(object):
-    VERSION = 13
-    VOTING_VERSION = 13
+    VERSION = 14
+    VOTING_VERSION = 14
     SUCCESSOR = None
     
     small_block_header_type = pack.ComposedType([
@@ -105,7 +107,7 @@ class Share(object):
         ('share_info', share_info_type),
     ])
     
-    gentx_before_refhash = pack.VarStrType().pack(DONATION_SCRIPT) + pack.IntType(64).pack(0) + pack.VarStrType().pack('\x6a\x28' + pack.IntType(256).pack(0) + pack.IntType(64).pack(0))[:3]
+    gentx_before_refhash = pack.VarStrType().pack(DONATION_SCRIPT2) + pack.IntType(64).pack(0) + pack.VarStrType().pack('\x6a\x28' + pack.IntType(256).pack(0) + pack.IntType(64).pack(0))[:3]
     
     @classmethod
     def generate_transaction(cls, tracker, share_data, block_target, desired_timestamp, desired_target, ref_merkle_link, desired_other_transaction_hashes_and_fees, net, known_txs=None, last_txout_nonce=0, base_subsidy=None):
@@ -140,7 +142,7 @@ class Share(object):
             else:
                 if known_txs is not None:
                     this_size = bitcoin_data.tx_type.packed_size(known_txs[tx_hash])
-                    if new_transaction_size + this_size > 50000: # only allow 50 kB of new txns/share
+                    if new_transaction_size + this_size > 5000000: # only allow 50 kB of new txns/share
                         break
                     new_transaction_size += this_size
                 new_transaction_hashes.append(tx_hash)
@@ -163,11 +165,14 @@ class Share(object):
         )
         assert total_weight == sum(weights.itervalues()) + donation_weight, (total_weight, sum(weights.itervalues()) + donation_weight)
         
-        amounts = dict((script, share_data['subsidy']*(199*weight)//(200*total_weight)) for script, weight in weights.iteritems()) # 99.5% goes according to weights prior to this share
+        amounts = dict((script,long(share_data['subsidy']*(199*weight)//(200*total_weight))) for script, weight in weights.iteritems()) # 99.5% goes according to weights prior to this share
         this_script = bitcoin_data.pubkey_hash_to_script2(share_data['pubkey_hash'])
         amounts[this_script] = amounts.get(this_script, 0) + share_data['subsidy']//200 # 0.5% goes to block finder
         amounts[DONATION_SCRIPT] = amounts.get(DONATION_SCRIPT, 0) + share_data['subsidy'] - sum(amounts.itervalues()) # all that's left over is the donation weight and some extra satoshis due to rounding
-        
+        if amounts[DONATION_SCRIPT]<1:
+            amounts[this_script]+=amounts[DONATION_SCRIPT]
+            amounts[DONATION_SCRIPT]=0
+			
         if sum(amounts.itervalues()) != share_data['subsidy'] or any(x < 0 for x in amounts.itervalues()):
             raise ValueError()
         
@@ -242,7 +247,7 @@ class Share(object):
         if len(self.merkle_link['branch']) > 16:
             raise ValueError('merkle branch too long!')
         
-        assert not self.hash_link['extra_data'], repr(self.hash_link['extra_data'])
+        #assert not self.hash_link['extra_data'], repr(self.hash_link['extra_data'])
         
         self.share_data = self.share_info['share_data']
         self.max_target = self.share_info['max_bits'].target
@@ -356,11 +361,11 @@ class Share(object):
             pass
         else:
             all_txs_size = sum(bitcoin_data.tx_type.packed_size(tx) for tx in other_txs)
-            if all_txs_size > 1000000:
+            if all_txs_size > 10000000:
                 return True, 'txs over block size limit'
             
             new_txs_size = sum(bitcoin_data.tx_type.packed_size(known_txs[tx_hash]) for tx_hash in self.share_info['new_transaction_hashes'])
-            if new_txs_size > 50000:
+            if new_txs_size > 5000000:
                 return True, 'new txs over limit'
         
         return False, None
