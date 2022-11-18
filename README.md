@@ -42,12 +42,12 @@ Download the p2pool code with the Infinitecoin parameter added
     git clone https://github.com/msy2008/p2pool-n.git
     cd p2pool-n
 
-Example:
+Run Example:
 
 
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
 
-Example of Merged Mining：
+Run Example of Merged Mining：
 
 
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoinrpcuser:dogmcoinrpcpassword@localhost:22172
