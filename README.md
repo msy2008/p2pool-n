@@ -80,7 +80,7 @@ P2pool communicates with miners via the stratum protocol. For IFC, configure you
     Password: x
 
 
-Passed away information
+Outdated information
 -------------------------
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
 * Infinitecoin [IFC]
