@@ -46,12 +46,29 @@ Run Example:
 
 
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
+ 
+ 
+If you need merged mining, the prerequisite is that it must be the same algorithm such as Scrypt algorithm, and it must be pow+auxpow, such as Litecoin+Dogecoin or Dogmcoin, Infinitecoin+Dogecoin or Dogmcoin, etc. It cannot be Bitcoin+Dogecoin, because Bitcoin The algorithm is SHA256.    
+
+Take Dogmcoin as an example: Create a file named dogmcoin.conf
+
+
+    server=1
+    daemon=1
+    listen=1
+    rpcuser=dogmcoinrpcuser
+    rpcpassword=dogmcoinrpcpassword
+    rpcport=22172
+    port=22171
+
 
 Run Example of Merged Mining：
 
 
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoinrpcuser:dogmcoinrpcpassword@localhost:22172
 
+
+-----------------------------------------------------------------------------------------
 
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
 * Infinitecoin [IFC]
