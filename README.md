@@ -26,18 +26,31 @@ Linux:
 
 You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or altcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
+Take Infinitecoin as an example: Create a file named infinitecoin.conf
+    
+    
+    server=1
+    daemon=1
+    listen=1
+    rpcuser=infinitecoinrpcuser
+    rpcpassword=infinitecoinrpcpassword
+    rpcport=9322
+    port=9321
+
+
+
     git clone https://github.com/msy2008/p2pool-n.git
     cd p2pool-n
 
 Example:
 
 
-    pypy run_p2pool.py infinitecoin infinitecoin123 --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
+    pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
 
 Example of Merged Mining：
 
 
-    pypy run_p2pool.py infinitecoin infinitecoin123 --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoin:dogmcoin123@localhost:22172
+    pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoinrpcuser:dogmcoinrpcpassword@localhost:22172
 
 
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
