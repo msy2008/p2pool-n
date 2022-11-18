@@ -71,6 +71,13 @@ Run Example of Merged Mining：
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoinrpcuser:dogmcoinrpcpassword@localhost:22172
 
 
+Miner setup
+
+P2pool communicates with miners via the stratum protocol. For IFC, configure your miners with the following information:
+
+URL: stratum+tcp://(Your node's IP address or hostname):9391
+Worker: (Your infinitecoin address)
+Password: x
 -----------------------------------------------------------------------------------------
 
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
