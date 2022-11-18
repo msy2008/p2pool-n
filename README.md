@@ -72,8 +72,8 @@ Run Example of Merged Mining：
 
 
 Miner setup
-
-P2pool communicates with miners via the stratum protocol. For IFC, configure your miners with the following information:
+-------------------------
+P2pool communicates with miners via the stratum protocol. For IFC, configure your miners with the following information
 
 URL: stratum+tcp://(Your node's IP address or hostname):9391
 Worker: (Your infinitecoin address)
