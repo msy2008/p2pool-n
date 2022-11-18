@@ -78,8 +78,10 @@ P2pool communicates with miners via the stratum protocol. For IFC, configure you
     stratum+tcp://(Your node's IP address or hostname):9391
     Worker: (Your infinitecoin address)
     Password: x
------------------------------------------------------------------------------------------
 
+
+Passed away information
+-------------------------
 P2Pool Server Node software for Scrypt-N coins. Currently supported:
 * Infinitecoin [IFC]
 * Vertcoin [VTC]
