@@ -37,7 +37,7 @@ Take Infinitecoin as an example: Create a file named infinitecoin.conf
     rpcport=9322
     port=9321
 
-
+Download the p2pool code with the Infinitecoin parameter added
 
     git clone https://github.com/msy2008/p2pool-n.git
     cd p2pool-n
