@@ -71,7 +71,7 @@ Take Dogmcoin as an example: Create a file named dogmcoin.conf
 
 Run Example of Merged Mining：
 
-
+    cd p2pool-n
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY --merged http://dogmcoinrpcuser:dogmcoinrpcpassword@localhost:22172
 
 
