@@ -43,16 +43,15 @@ Take Infinitecoin as an example: Create a file named infinitecoin.conf
 Download the p2pool code with the Infinitecoin parameter added
 
     git clone https://github.com/msy2008/p2pool-n.git
-    cd p2pool-n
 
 You also need to install the litecoin-scrypt module.
 
-    cd py_modules/litecoin_scrypt
+    cd p2pool-n/py_modules/litecoin_scrypt
     sudo pypy setup.py install
         
 Run Example:
 
-
+    cd p2pool-n
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
  
  
