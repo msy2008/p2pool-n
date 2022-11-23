@@ -29,12 +29,14 @@ Linux:
 
 You'll also need to install and run your bitcoin-qt or bitcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or altcoin or whatever other coin you intend to mine) with your bitcoin's RPC username and password. Launch your bitcoin-qt or bitcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
-case:
+mining case:
 ===========================
 
 Taking Infinitecoin as an example: 
 Download Infinitecoin Core Wallet：
+
 https://github.com/infinitecoin-project/infinitecoin/releases
+
 Create a file named infinitecoin.conf and edit the following content under ~/.infinitecoin.
     
     
@@ -68,7 +70,9 @@ merged mining case:
 
 Taking Dogmcoin as an example: 
 Download Infinitecoin Core Wallet：
+
 https://github.com/dogmcoin/dogmcoin/releases
+
 Create a file named dogmcoin.conf and edit the following content under ~/.dogmcoin.
 
 
