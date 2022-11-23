@@ -29,7 +29,7 @@ Linux:
 
 You'll also need to install and run your bitcoind or altcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or whatever other coin you intend to mine) with your bitcoind's RPC username and password. Launch your bitcoind or altcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
-Take Infinitecoin as an example: Create a file named infinitecoin.conf
+Taking Infinitecoin as an example: Create a file named infinitecoin.conf and edit the following content.
     
     
     server=1
@@ -57,7 +57,7 @@ Run Example:
  
 If you need merged mining, the prerequisite is that it must be the same algorithm such as Scrypt algorithm, and it must be pow+auxpow, such as Litecoin+Dogecoin or Dogmcoin, Infinitecoin+Dogecoin or Dogmcoin, etc. It cannot be Bitcoin+Dogecoin, because Bitcoin The algorithm is SHA256.    
 
-Take Dogmcoin as an example: Create a file named dogmcoin.conf
+Taking Dogmcoin as an example: Create a file named dogmcoin.conf and edit the following content.
 
 
     server=1
