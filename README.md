@@ -33,7 +33,7 @@ mining case:
 ===========================
 
 Taking Infinitecoin as an example: 
-Download Infinitecoin Core Wallet：
+First download the Infinitecoin core wallet
 
 https://github.com/infinitecoin-project/infinitecoin/releases
 
@@ -69,7 +69,7 @@ merged mining case:
 -------------------------
 
 Taking Dogmcoin as an example: 
-Download Infinitecoin Core Wallet：
+First download the Dogmcoin core wallet
 
 https://github.com/dogmcoin/dogmcoin/releases
 
