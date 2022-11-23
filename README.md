@@ -37,7 +37,7 @@ First download the Infinitecoin core wallet
 
 https://github.com/infinitecoin-project/infinitecoin/releases
 
-Create a file named infinitecoin.conf and edit the following content under ~/.infinitecoin.
+Create a new file named infinitecoin.conf under ~/.infinitecoin and edit the following content.
     
     
     server=1
@@ -73,7 +73,7 @@ First download the Dogmcoin core wallet
 
 https://github.com/dogmcoin/dogmcoin/releases
 
-Create a file named dogmcoin.conf and edit the following content under ~/.dogmcoin.
+Create a new file named dogmcoin.conf under ~/.dogmcoin and edit the following content.
 
 
     server=1
