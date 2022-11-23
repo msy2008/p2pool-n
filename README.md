@@ -55,7 +55,7 @@ Run Example:
     pypy run_p2pool.py infinitecoinrpcuser infinitecoinrpcpassword --net infinitecoin --give-author 0 -f 5 -a i5wmzMYApHC4k6W7cEvoRWA5ouCdcVjucY
  
  
-If you need merged mining, the prerequisite is that it must be the same algorithm such as Scrypt algorithm, and it must be pow+auxpow, such as Litecoin+Dogecoin or Dogmcoin, Infinitecoin+Dogecoin or Dogmcoin, etc. It cannot be Bitcoin+Dogecoin, because Bitcoin The algorithm is SHA256.    
+If you need merged mining, the prerequisite is that it must be the same algorithm such as Scrypt algorithm, and it must be pow+auxpow, such as Litecoin+Dogecoin or Dogmcoin, Infinitecoin+Dogecoin or Dogmcoin, etc. It cannot be Bitcoin+Dogecoin or Dogmcoin, because Bitcoin The algorithm is SHA256.    
 
 Taking Dogmcoin as an example: Create a file named dogmcoin.conf and edit the following content.
 
