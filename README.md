@@ -29,7 +29,13 @@ Linux:
 
 You'll also need to install and run your bitcoin-qt or bitcoind of choice, and edit ~/.bitcoin/bitcoin.conf (or the corresponding file for litecoin or altcoin or whatever other coin you intend to mine) with your bitcoin's RPC username and password. Launch your bitcoin-qt or bitcoind, and after it has finished downloading blocks and syncing, go to your p2pool directory and run
 
-Taking Infinitecoin as an example: Create a file named infinitecoin.conf and edit the following content under ~/.infinitecoin.
+case:
+===========================
+
+Taking Infinitecoin as an example: 
+Download Infinitecoin Core Wallet：
+https://github.com/infinitecoin-project/infinitecoin/releases
+Create a file named infinitecoin.conf and edit the following content under ~/.infinitecoin.
     
     
     server=1
@@ -57,7 +63,13 @@ Run Example:
  
 If you need merged mining, the prerequisite is that it must be the same algorithm such as Scrypt algorithm, and it must be pow+auxpow, such as Litecoin+Dogecoin or Dogmcoin, Infinitecoin+Dogecoin or Dogmcoin, etc. It cannot be Bitcoin+Dogecoin or Dogmcoin, because Bitcoin The algorithm is SHA256.    
 
-Taking Dogmcoin as an example: Create a file named dogmcoin.conf and edit the following content under ~/.dogmcoin.
+merged mining case:
+-------------------------
+
+Taking Dogmcoin as an example: 
+Download Infinitecoin Core Wallet：
+https://github.com/dogmcoin/dogmcoin/releases
+Create a file named dogmcoin.conf and edit the following content under ~/.dogmcoin.
 
 
     server=1
